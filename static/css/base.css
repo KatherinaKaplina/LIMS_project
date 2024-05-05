@@ -1,0 +1,58 @@
+.navbar_main {
+  background-color: rgb(37, 34, 34);
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+  height: 30px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 100px;
+}
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-auth {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 100px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.footer { 
+    text-align: center;
+    background-color: rgb(37, 34, 34);
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+} 
+.footer-text {
+    color: white;
+    text-align: center;
+    display: inline-block;
+}

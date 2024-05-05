@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <div class="row">
+            <div class="context-extrnl">
+                <h3 class="my-4">Recently viewed</h3>
+                <div class="list-group">
+                    {% for batcn_num in batcn_nums %}
+                        <a href="#" class="list-group-item"> {{ batcn_num.reagent }} | {{ batcn_num.batch_number }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <form action="{% url 'main' %}" method="GET">
+                <input type="text" name="q" placeholder="Enter needed reagent name">
+                <button type="submit">Search</button>
+            </form>
+                <div class="context-1">
+                    <div class="row">
+                        {% if message %}
+                            <div class="context-message">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endif %}                        
+                        {% if samples %}                  
+                        {% for sample in samples %}
+                            <div class="card-main">
+                                <div class="card">
+                                    {% if sample.image %}
+                                    <img class="card-img" src="{{ sample.image.url }}" alt="">
+                                    {% else %}
+                                    <img class="card-img" src="/static/img/default_image.png" alt="">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h3 class="card-title"><h2>{{ sample.name }}</h2>
+                                        <h4>{% if sample.formula %}
+                                            {{ sample.formula }}
+                                            {% else %}
+                                            No Formula Available
+                                            {% endif %}</h4>
+                                    </div>
+                                    <div class="card_footer">
+                                        <a class="btn-success" href="{% url 'tracking' reagent_id=sample.id %}">Tracking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page-navigation">
+        <ul class="pagination">
+            <li class="page-item {% if not samples.has_previous %} disabled {% endif %}">
+                <a class="page-link" 
+                href="{% if samples.has_previous %} {% url 'page' samples.previous_page_number %} {% else %} # {% endif %}" 
+                tabindex="-1" aria-disabled="{% if not samples.has_previous %}true{% endif %}">
+                    Previous
+                </a>
+            </li>
+            {% for page in samples.paginator.page_range %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'page' page %}">
+                        {{ page }}
+                    </a>
+                </li>
+            {% endfor %}
+            <li class="page-item {% if not samples.has_next %} disabled {% endif %}">
+                <a class="page-link"
+                href="{% if samples.has_next %} {% url 'page' samples.next_page_number %} {% else %} # {% endif %}"
+                aria-disabled="{% if not samples.has_next %}true{% endif %}">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+{% endblock %}
+
+
+
+

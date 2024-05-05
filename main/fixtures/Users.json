@@ -1,0 +1,81 @@
+[
+    {
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$PMKKwWIr8WDtH96iZxpOgH$0hEeinFwvbSZ0sz1AiouzgZW0Q/joKNAs5zAmI7Xq0I=",
+            "last_login": "2024-04-07T20:16:53.143Z",
+            "is_superuser": true,
+            "username": "Admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@test.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-03-30T15:20:54.690Z",
+            "image": "",
+            "position": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$tbWGmgSCicjs7vp285o3Cw$f2tzdXuxg9+AIItPLXTLB9kbc86z9wy6tl8sbNVB9VQ=",
+            "last_login": "2024-04-07T20:19:50.228Z",
+            "is_superuser": false,
+            "username": "Kate",
+            "first_name": "Katherina",
+            "last_name": "Kaplina",
+            "email": "kate_user@test.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-03-30T22:39:31.806Z",
+            "image": "",
+            "position": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$KCCFOqWfJwmCEm4DoSQHBK$J+dPeOoL8rcX0I4LcN3mNVm0bIlma5H/v9KolRkOTjE=",
+            "last_login": "2024-04-06T20:29:00.469Z",
+            "is_superuser": false,
+            "username": "Rob",
+            "first_name": "Robert",
+            "last_name": "Nill",
+            "email": "rob_user@test.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-03-31T15:22:35.434Z",
+            "image": "",
+            "position": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$8uHTXkRV2SZOHaQuRyM5PZ$uJcGArzbFMt/Zk7VZCfcK6fBssQ/fFKhnZmbKmZxs7o=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "PatrickScott",
+            "first_name": "Patrick",
+            "last_name": "Scott",
+            "email": "patrick_user@test.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-03-31T15:33:22.882Z",
+            "image": "",
+            "position": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

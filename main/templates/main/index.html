@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container-index">
+            <div class="row">
+                <div class="table-column">
+                {% if user.is_authenticated %}
+                    <ul>
+                        <li><button id="1_1" type="button" class="btn btn-lg">
+                            <a id="1_2" href="{% url 'main' %}">Inventory Management</a>
+                        </button></li>
+                        <li><button id="2_1" type="button" class="btn btn-lg">
+                            <a id="2_2" href="{% url 'main' %}">Sample Management</a>
+                        </button></li>
+                        <li><button id="3_1" type="button" class="btn btn-lg">
+                            <a id="3_2" href="#">Test Management</a>
+                        </button></li>
+                        <li><button id="5_1" type="button" class="btn btn-lg">
+                            <a id="5_2" href="#">Workflow Management</a>
+                        </button></li>
+                        <li><button id="start-purchase-btn" type="button" class="btn btn-lg">
+                            <a id="6_2" href="#">Document Management</a>
+                        </button></li>
+                        <li><button id="7_1" type="button" class="btn btn-lg">
+                            <a id="7_2" href="#">Reporting</a>
+                        </button></li>
+                        <li><button id="8_1" type="button" class="btn btn-lg">
+                            <a id="8_2" href="#">Study Management</a>
+                        </button></li>
+                    </ul>
+                {% endif %}
+                </div>
+
+                <div class="text-column">
+                    <h1 class="container-index-text">Laboratory Information Management System</h1>
+                    <p>Unlock the power of efficient and effective lab management with our Laboratory Information Management System (LIMS). Our system provides a comprehensive suite of features designed to streamline your lab operations and enhance productivity.</p>
+                    <ul>
+                        <li>
+                            <b>Inventory Management:</b> Keep track of your lab inventory including reagents and other consumables with ease. Import inventory records from a file or simply scan barcodes to add new items to your inventory.
+                        </li>
+                        <li>
+                            <b>Sample Management:</b> Ensure sample traceability from receipt to disposal with simplified tracking. This feature supports lab managers in maintaining an organized and efficient lab environment.
+                        </li>
+                        <li>
+                            <b>Test Management:</b> Monitor assigned jobs and trace associations between instruments, reagents, and samples. With LIMS, you can manage and oversee your lab's testing processes effectively.
+                        </li>
+                        <li>
+                            <b>Workflow Management:</b> Our system facilitates smooth workflow management, allowing you to streamline lab processes and reduce time-to-market.
+                        </li>
+                        <li>
+                            <b>Document Management:</b> Keep all your important lab documents in one place. With LIMS, you can easily store, manage, and retrieve essential documents when you need them.
+                        </li>
+                        <li>
+                            <b>Reporting:</b> Generate comprehensive reports to monitor lab performance and productivity. LIMS makes it easy to analyze data and make informed decisions for your lab.
+                        </li>
+                        <li>
+                            <b>Study Management:</b> Manage your research studies with ease. LIMS provides you with the tools to plan, execute, and monitor your studies effectively.
+                        </li>
+                    </ul>
+                    <p>
+                        With LIMS, you can prevent product recalls due to poor product quality and ensure product quality by automating product release. Experience the transformation in your lab operations with our Laboratory Information Management System.
+                    </p>
+                </div>     
+            </div>                 
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+
+
+{% block css %}
+    <link href="{% static 'css/tracking.css' %}" rel="stylesheet">
+{% endblock %}  
+
+{% block content %}
+    <div class="container-user">
+        <h5 class="container-user-current">Current User</h5>               
+        <div class="form-group">
+            <label>First Name</label>
+            {{ user.first_name }}
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            {{ user.last_name }}
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            {{ user.email }}
+        </div>
+    </div>
+    
+    <div class="reagent-info">
+        <div>
+            {% if sample.image %}
+            <img class="reagent-img" src="{{ sample.image.url }}" alt="">
+            {% else %}
+            <img class="card-img" src="/static/img/default_image.png" alt="">
+            {% endif %}
+        </div>  
+        <div class="reagent-table">
+            <table class="table">
+                <thead class="table-head">
+                    <tr class="table-row-head"></tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <th class="table-cell-head" role="cell" colspan="1" rowspan="1" style="vertical-align: top;">
+                            <span>
+                                <p>Name:</p>
+                            </span>
+                        </th>
+                        <td class="table-cell" role="cell" colspan="1" rowspan="1" style="vertical-align: top;">
+                            <span>
+                                <h3><p>{{ sample.name }}</p></h3>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <th class="table-cell-head">
+                            <span>
+                                <p>Synonyms:</p>
+                            </span>
+                        </th>
+                        <td class="table-cell">
+                            <span>
+                                <p>{% if sample.synonyms %}
+                                    {{ sample.synonyms }}
+                                    {% else %}
+                                    No Synonyms
+                                    {% endif %}</p>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <th class="table-cell-head">
+                            <span>
+                                <p>Linear formula:</p>
+                            </span>
+                        </th>
+                        <td class="table-cell">
+                            <span>
+                                <p>{% if sample.formula %}
+                                    {{ sample.formula }}
+                                    {% else %}
+                                    No Formula
+                                    {% endif %}</p>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <th class="table-cell-head" >
+                            <span>
+                                <p>Molecular Weight:</p>
+                            </span>
+                        </th>
+                        <td class="table-cell">
+                            <span>
+                                <p>{{ sample.molecular_weight }} </p>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="table-row">
+                        <th class="table-cell-head">
+                            <span>
+                                <p>CAS No.:</p>
+                            </span>
+                        </th>
+                        <td class="table-cell">
+                            <span>
+                                <p>{{ sample.CAS }}</p>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<div class="conteiner-reagent-tracking">
+    <h4 class="conteiner-reagent-tracking-header">
+        Reagent tracking</h4>
+        {% if changes %}
+            {% for change in changes %}
+                <div class="reagent-tracking-card">
+                    <div class="reagent-tracking-card-footer-body">
+                        <h5 class="reagent-tracking-card-footer-title"> Batch: {{ change.batch.batch_number }}</h5>
+                    </div>
+                    <ul class="reagent-tracking-card-list">
+                        <li class="reagent-tracking-card-list-text">
+                            <span class="text-muted">Original quantity: {{ change.batch.quantity }} {{ change.batch.units }}</span>
+                            <span class="text-muted">Remaining quantity: {{ change.batch.quantity|subtract:change.common_quantity_changed }} {{ change.batch.units }}</span>
+                        </li>
+                    </ul>
+                    {% if change.batch.quantity|subtract:change.common_quantity_changed > 0 %}
+                    <div class="reagent-tracking-card-footer">
+                        <form action="{% url 'reagent_changed' change.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="quantity">I want to use:</label>
+                            <input type="number" id="quantity" name="quantity" step="0.01" min="0">
+                            {% if messages %}
+                                {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="message">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                {% endfor %}
+                            {% endif %}
+                            <input type="submit" value="Confirm" class="btn btn-success btn-lg float-right">
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="reagent-tracking-card-footer">
+                        <p>This batch of reagent is no longer available</p>
+                    </div>
+                    {% endif %}
+                </div>                
+            {% endfor %}
+        {% else %}
+            <h3>There are no batches of this reagent yet</h3>
+        {% endif %}
+</div>
+{% endblock %}
+
+

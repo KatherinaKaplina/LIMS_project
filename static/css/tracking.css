@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(/static/img/wallpaper_tracking.png); background-size:cover;
+}
+
+.container-user {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 50px;
+    margin-right: 250px;
+  }
+  
+  .container-user-current {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .reagent-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .reagent-img {
+    width: 100%;
+    height: 250px;
+    margin-left: 20px;
+  }
+  
+  .reagent-table {
+    width: 100%;
+    margin-left: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-head {
+    background-color: #f0f0f0;
+  }
+  
+  .table-row-head, .table-row {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table-cell-head, .table-cell {
+    padding: 5px;
+    text-align: left;
+    /* font-size: 18px; */
+  }
+  .conteiner-reagent-tracking {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .conteiner-reagent-tracking-header {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .reagent-tracking-card {
+    width: 700px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .reagent-tracking-card-footer-body,
+  .reagent-tracking-card-footer {
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .reagent-tracking-card-footer-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .reagent-tracking-card-list {
+    list-style: none;
+    padding: 0 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .reagent-tracking-card-list-text {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #888;
+    display: inline-block; 
+  }
+  
+  .alert {
+    margin-bottom: 10px;
+  }
+  
+  input[type="number"],
+  input[type="submit"] {
+    margin-top: 10px;
+  }
+  
+  input[type="submit"] {
+    float: right;
+    padding: 10px 20px; 
+    background-color: rgb(37, 34, 34); 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 140px;
+  }

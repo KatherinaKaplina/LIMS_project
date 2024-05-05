@@ -1,0 +1,98 @@
+[
+    {
+        "model": "main.reagent",
+        "pk": 1,
+        "fields": {
+            "name": "Methanol",
+            "synonyms": "Methyl alcohol",
+            "formula": "CH3OH",
+            "CAS": "67-56-1",
+            "molecular_weight": "32.04",
+            "image": "uploads/methanol.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 2,
+        "fields": {
+            "name": "Acetonitrile",
+            "synonyms": "ACN, Ethyl nitrile, Methyl cyanide",
+            "formula": "CH3CN",
+            "CAS": "75-05-8",
+            "molecular_weight": "41.05",
+            "image": "uploads/Acetonitrile.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 3,
+        "fields": {
+            "name": "2-Propanol",
+            "synonyms": "IPA, Isopropanol, Isopropyl alcohol",
+            "formula": "(CH3)2CHOH",
+            "CAS": "67-63-0",
+            "molecular_weight": "60.10",
+            "image": "uploads/Isopropanol.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 4,
+        "fields": {
+            "name": "Chloroform",
+            "synonyms": "Methylidyne trichloride, Trichloromethane",
+            "formula": "CHCl3",
+            "CAS": "67-66-3",
+            "molecular_weight": "119.38",
+            "image": "uploads/Chloroform.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 5,
+        "fields": {
+            "name": "Phenolphthalein",
+            "synonyms": "3,3-Bis(4-hydroxyphenyl)-1(3H)-isobenzofuranone",
+            "formula": "C20H14O4",
+            "CAS": "77-09-8",
+            "molecular_weight": "318.32",
+            "image": "uploads/Phenolphthalein.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 6,
+        "fields": {
+            "name": "Anthracene",
+            "synonyms": "Anthraxcene, Paranaphthalene",
+            "formula": "C14H10",
+            "CAS": "120-12-7",
+            "molecular_weight": "178.23",
+            "image": "uploads/Anthracene.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 7,
+        "fields": {
+            "name": "Fullerene-C60",
+            "synonyms": "Buckminsterfullerene",
+            "formula": "C60",
+            "CAS": "99685-96-8",
+            "molecular_weight": "720.64",
+            "image": "uploads/Fullerene.png"
+        }
+    },
+    {
+        "model": "main.reagent",
+        "pk": 8,
+        "fields": {
+            "name": "Acetic acid",
+            "synonyms": "Glacial acetic acid, Acetic acid solution",
+            "formula": "CH3CO2H",
+            "CAS": "64-19-7",
+            "molecular_weight": "60.05",
+            "image": "uploads/Acetic_acid.png"
+        }
+    }
+]

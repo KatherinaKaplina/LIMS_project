@@ -1,0 +1,82 @@
+[
+    {
+        "model": "main.batch",
+        "pk": 1,
+        "fields": {
+            "batch_number": "1570101",
+            "reagent": 1,
+            "quantity": "4.00",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 2,
+        "fields": {
+            "batch_number": "1570444",
+            "reagent": 1,
+            "quantity": "12.00",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 3,
+        "fields": {
+            "batch_number": "2100229",
+            "reagent": 1,
+            "quantity": "3.00",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 4,
+        "fields": {
+            "batch_number": "34863",
+            "reagent": 2,
+            "quantity": "10.00",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 5,
+        "fields": {
+            "batch_number": "PRT1072",
+            "reagent": 3,
+            "quantity": "20.00",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 6,
+        "fields": {
+            "batch_number": "04479",
+            "reagent": 5,
+            "quantity": "0.50",
+            "units": "L"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 7,
+        "fields": {
+            "batch_number": "A89200",
+            "reagent": 6,
+            "quantity": "0.50",
+            "units": "kg"
+        }
+    },
+    {
+        "model": "main.batch",
+        "pk": 8,
+        "fields": {
+            "batch_number": "FF1FF101",
+            "reagent": 7,
+            "quantity": "20.00",
+            "units": "g"
+        }
+    }
+]

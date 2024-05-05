@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="login">
+        {% if messages or form.errors %}
+        <div class="alert alert-warning" role="alert"
+                style="margin-top: 50px;">
+            {% if messages %}  
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% else %}
+                {{ form.non_field_errors }}
+            {% endif %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        <div class="card-login">
+            <div class="card-login-header">
+                <h3>Account Login</h3>
+            </div>
+            <div class="card-login-body">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="form-group-fields" for="{{ form.username.id_for_label }}">Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group-fields" for="{{ form.password.id_for_label }}">Password</label>
+                        {{ form.password }}
+                    </div>
+                    <div class="form-group-forget-password">
+                        <a class="form-group-forget-password-link" href="#">Forgot password?</a>
+                        <input class="form-group-forget-password-button" type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+            <div class="card-login-footer">
+                <div class="card-footer-register"><a href="{% url 'register' %}">Register Account</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
